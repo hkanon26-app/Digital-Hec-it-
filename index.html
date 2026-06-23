@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital.Hec[It] | Desarrollo Web & Soporte Técnico</title>
+    <meta name="description" content="Digital.Hec[It] - Diseño web y soporte técnico de alto impacto.">
+
+    <!--       Open Graph      -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digital.Hec[It] | Diseño Web Premium">
+    <meta property="og:description" content="Transformamos tu negocio con estrategias digitales de alto impacto.">
+    <meta property="og:image" content="https://hecit.digital/Asset/projects/restaurante.png">
+
+    <!-- Fuentes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!--        LOADER      -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="brand-logo">
+                    <div class="brand-bridge">
+                        <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 90 H380 M60 90 V40 M340 90 V40 M60 45 C120 75 280 75 340 45" stroke="white"
+                                stroke-width="2" stroke-dasharray="4 4" opacity="0.5" />
+                            <rect x="55" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                            <rect x="335" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                        </svg>
+                    </div>
+                    <div class="brand-icon">DH</div>
+                    <div class="brand-text">
+                        <div class="brand-digital">DIGITAL</div>
+                        <div class="brand-hecit">H E C <span>[ I T ]</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!--        NAV COMÚN       -->
+
+    <nav id="nav-principal">
+        <div class="brand-logo">
+            <div class="brand-bridge">
+                <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 90 H380 M60 90 V40 M340 90 V40 M60 45 C120 75 280 75 340 45" stroke="white"
+                        stroke-width="2" stroke-dasharray="4 4" opacity="0.5" />
+                    <rect x="55" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                    <rect x="335" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                </svg>
+            </div>
+            <div class="brand-icon">DH</div>
+            <div class="brand-text">
+                <div class="brand-digital">DIGITAL</div>
+                <div class="brand-hecit">H E C <span>[ I T ]</span></div>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <!-- Grupo de enlaces de Desarrollo Web -->
+            <div id="nav-web" class="nav-grupo">
+                <a href="#">Inicio</a>
+                <a href="#metodo">Metodologia</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#portafolio">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <!-- Grupo de enlaces de Soporte Técnico -->
+            <div id="nav-soporte" class="nav-grupo" style="display: none;">
+                <a href="#">Inicio</a>
+                <a href="#servicios-sop">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#acerca">Acerca de</a>
+                <a href="#contacto-sop">Contacto</a>
+            </div>
+
+            <!-- Enlaces de cambio de vista -->
+            <a href="#" id="link-web">Desarrollo Web</a>
+            <a href="#" id="link-soporte">Soporte Técnico</a>
+        </div>
+
+        <a href="https://wa.me/573161621202" class="btn-cotizar btn-nav">Cotizar</a>
+    </nav>
+
+    <!--        VISTA 1: DESARROLLO WEB (oscura)        -->
+    <main id="vista-web" class="vista activa">
+        <header id="inicio-web" class="hero">
+            <div class="hero-glow-container">
+                <div class="hero-glow"></div>
+                <div class="hero-glow"
+                    style="top: auto; bottom: -300px; left: -200px; right: auto; background: radial-gradient(circle, rgba(14,165,233, 0.1) 0%, transparent 70%);">
+                </div>
+            </div>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Disponible para nuevos proyectos
+            </div>
+            <h1 class="hero-heading">
+                Paginas web <br>
+                que <span class="color-accent">convierten</span><br>
+                y <span class="color-violet">perduran</span>
+            </h1>
+            <p class="hero-sub">Desarrollo y diseño de sitios web para negocios que quieren digitalizarse.</p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/573161621202" class="btn-primary">Cotizar proyecto</a>
+                <a href="#portafolio" class="btn-ghost">Ver portafolio</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-num" style="color:var(--accent)">🚀</div>
+                    <div class="stat-label">Entrega Rápida</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Responsive</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" style="color:#A855F7; font-size: 2.8rem;">∞</div>
+                    <div class="stat-label">Dedicación</div>
+                </div>
+            </div>
+            <div class="code-float">
+                <div class="code-line"><span class="com">// Digital Hec[it] — 2026</span></div>
+                <div class="code-line"><span class="kw">const</span> <span class="fn">proyecto</span> = {</div>
+                <div class="code-line">&nbsp;&nbsp;tipo: <span class="str">"web moderna"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;entrega: <span class="str">"Personalizada"</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;responsive: <span class="kw">true</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;seo: <span class="kw">true</span>,</div>
+                <div class="code-line">&nbsp;&nbsp;whatsapp: <span class="kw">true</span></div>
+                <div class="code-line">}</div>
+                <div class="code-line" style="margin-top:12px;"><span class="fn">build</span>(proyecto) <span
+                        class="com">//
+                        ✓ listo</span></div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>SCROLL</span>
+            </div>
+        </header>
+
+        <!-- SECCION METODO -->
+        <section id="metodo">
+            <div class="section-tag">// metodología</div>
+            <h2 class="section-title">¿Cómo trabajamos? <br><span>Paso a paso</span> hacia tu éxito digital</h2>
+            <p class="section-sub">Un proceso probado que garantiza resultados excepcionales en cada proyecto con total
+                claridad
+                y elegancia.</p>
+
+
+            <div class="method-grid">
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">01</div>
+                        <span class="step-tag">ESTRATEGIA</span>
+                        <h3>Consulta Inicial</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Entendemos tu visión, objetivos y contexto del negocio para trazar
+                            la ruta
+                            más efectiva.</p>
+                        <ul class="card-reveal-list">
+                            <li>Reunión inicial sin compromiso</li>
+                            <li>Análisis del negocio y contexto</li>
+                            <li>Definición de objetivos claros</li>
+                            <li>Identificación de oportunidades</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">02</div>
+                        <span class="step-tag">ANÁLISIS</span>
+                        <h3>Levantamiento de Requerimientos</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Documentamos lo que necesita el proyecto y definimos el alcance
+                            exacto.</p>
+                        <ul class="card-reveal-list">
+                            <li>Documentación detallada</li>
+                            <li>Definición del alcance (scope)</li>
+                            <li>Priorización de funcionalidades</li>
+                            <li>Entrega de brief técnico</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">03</div>
+                        <span class="step-tag">PROPUESTA</span>
+                        <h3>Cotización &amp; Contrato</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Propuesta formal con costos, cronograma y contrato firmado antes de
+                            iniciar.
+                        </p>
+                        <ul class="card-reveal-list">
+                            <li>Propuesta formal detallada</li>
+                            <li>Desglose de costos y tiempos</li>
+                            <li>Negociación y ajustes</li>
+                            <li>Firma de contrato</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">04</div>
+                        <span class="step-tag">DISEÑO</span>
+                        <h3>Diseño &amp; Arquitectura</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Wireframes y mockups de alta fidelidad. El cliente aprueba antes de
+                            codificar.</p>
+                        <ul class="card-reveal-list">
+                            <li>Wireframes de baja fidelidad</li>
+                            <li>Mockups de alta fidelidad</li>
+                            <li>Aprobación del cliente</li>
+                            <li>Arquitectura técnica definida</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">05</div>
+                        <span class="step-tag">DEV</span>
+                        <h3>Desarrollo</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Construcción con las mejores tecnologías. Demos periódicas para ver
+                            el
+                            avance.</p>
+                        <ul class="card-reveal-list">
+                            <li>Código limpio y escalable</li>
+                            <li>Demos periódicas de avance</li>
+                            <li>Control de versiones (Git)</li>
+                            <li>Integraciones y APIs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">06</div>
+                        <span class="step-tag">QA</span>
+                        <h3>Pruebas &amp; Ajustes</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Testing exhaustivo en múltiples dispositivos y revisión final del
+                            cliente.
+                        </p>
+                        <ul class="card-reveal-list">
+                            <li>Testing multi-dispositivo</li>
+                            <li>Rendimiento y SEO</li>
+                            <li>Corrección de errores</li>
+                            <li>Aprobación final</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">07</div>
+                        <span class="step-tag">LAUNCH</span>
+                        <h3>Lanzamiento</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Deploy profesional con dominio, SSL y revisión post-lanzamiento
+                            incluida.
+                        </p>
+                        <ul class="card-reveal-list">
+                            <li>Deploy a producción</li>
+                            <li>Dominio y certificado SSL</li>
+                            <li>Revisión post-lanzamiento</li>
+                            <li>Capacitación al cliente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="card-head">
+                        <div class="step-big-num">08</div>
+                        <span class="step-tag">SUPPORT</span>
+                        <h3>Soporte &amp; Mantenimiento</h3>
+                    </div>
+                    <div class="card-reveal">
+                        <p class="card-reveal-desc">Acompañamiento continuo: actualizaciones, backups y nuevas
+                            funcionalidades.
+                        </p>
+                        <ul class="card-reveal-list">
+                            <li>Actualizaciones regulares</li>
+                            <li>Monitoreo y backups</li>
+                            <li>Soporte técnico prioritario</li>
+                            <li>Evolución del proyecto</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCION SERVICIOS  -->
+        <section id="servicios">
+            <div class="section-tag">// servicios</div>
+            <h2 class="section-title">¿Que puedo construir para ti?</h2>
+            <p class="section-sub">Cada proyecto es diseñado desde cero, pensado para tu negocio y optimizado para
+                resultados.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <div class="service-title">Páginas Web Corporativas</div>
+                    <div class="service-desc">Diseño y desarrollo de tu presencia digital desde cero, Home, servicios,
+                        portafolio y contacto</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <div class="service-title">Tiendas Online</div>
+                    <div class="service-desc">E-commerce funcional con carrito, pagos y gestion de productos. Listo para
+                        vender desde el dia 1</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <div class="service-title">Mantenimiento Web</div>
+                    <div class="service-desc">Actualizaciones, seguridad, backups y soporte mensual para que tu web
+                        nunca se
+                        detenga.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <div class="service-title">Mantenimiento Hardware</div>
+                    <div class="service-desc">Diagnóstico, reparación y mantenimiento preventivo para tus equipos de
+                        computo
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION PORTAFOLIO -->
+        <section id="portafolio">
+            <div class="section-tag" style="padding: 0 24px;">// portafolio</div>
+            <h2 class="section-title" style="padding: 0 24px;">Proyectos recientes</h2>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-btn next" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide slide-active" data-index="0">
+                        <div class="slide-image">
+                            <img src="Asset/projects/restaurante.png" alt="Restaurante Digital"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop'">
+                            <div class="slide-overlay"></div>
+                        </div>
+                        <div class="slide-info">
+                            <h4>Restaurante Digital</h4>
+                            <p>Web corporativa interactiva con reservas y menú en línea. Sistema premium
+                                autoadministrable.</p>
+                            <div class="slide-tags">
+                                <span>#WebCorporativa</span>
+                                <span>#Reservas</span>
+                            </div>
+                            <a href="#" class="slide-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide slide-next" data-index="1">
+                        <div class="slide-image">
+                            <img src="Asset/projects/ecommerce.png" alt="E-commerce Moda"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop'">
+                            <div class="slide-overlay"></div>
+                        </div>
+                        <div class="slide-info">
+                            <h4>E-commerce Moda</h4>
+                            <p>Plataforma de ventas con carrito inteligente, pasarela de pagos integrada y optimizada
+                                para altas
+                                conversiones.</p>
+                            <div class="slide-tags">
+                                <span>#TiendaOnline</span>
+                                <span>#Pagos</span>
+                            </div>
+                            <a href="#" class="slide-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide slide-hidden-right" data-index="2">
+                        <div class="slide-image">
+                            <img src="Asset/projects/legal.png" alt="Consultoría Legal"
+                                loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop'">
+                            <div class="slide-overlay"></div>
+                        </div>
+                        <div class="slide-info">
+                            <h4>Consultoría Legal</h4>
+                            <p>Landing page enfocada en captura rápida de clientes potenciales y validación de leads
+                                calificados.</p>
+                            <div class="slide-tags">
+                                <span>#LandingPage</span>
+                                <span>#Leads</span>
+                            </div>
+                            <a href="#" class="slide-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-dots">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION TESTIMONIOS -->
+        <section id="testimonios">
+            <div class="section-tag">// testimonios</div>
+            <h2 class="section-title">Confianza depositada <br>en resultados <span>reales</span></h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="test-text">"Héctor transformó nuestra presencia digital. Las ventas por la web aumentaron
+                        un
+                        40% en solo dos meses."</p>
+                    <div class="test-author">
+                        <div class="test-info">
+                            <h4>Carlos Rodriguez</h4>
+                            <span>Dueño de Restaurante</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="test-text">"Excelente comunicación y entrega puntual. El diseño es increíblemente moderno
+                        y
+                        funcional."</p>
+                    <div class="test-author">
+                        <div class="test-info">
+                            <h4>Elena Gómez</h4>
+                            <span>Directora de Boutique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION CONTACTOS  -->
+        <section id="contacto">
+            <div class="contact-inner">
+                <div class="contact-info">
+                    <div class="section-tag">// contacto</div>
+                    <h2>¿Hablamos de <br>tu proyecto?</h2>
+                    <p>Cuéntame que necesitas y te respondo en menos de 24 horas con una propuesta clara y sin
+                        compromisos.
+                    </p>
+                    <div class="contact-detail">
+                        <div class="icon">📱</div>
+                        <div><strong>3161621202</strong><span>WhatsApp / Llamada</span></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">📍</div>
+                        <div><strong>Colombia</strong><span>Proyectos remotos a todo el país</span></div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">⏱️</div>
+                        <div><strong>Respuesta en 24h</strong><span>Lunes a sabados</span></div>
+                    </div>
+                    <form class="contact-form" action="https://formspree.io/f/mwvradzw" method="POST">
+
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">WhatsApp / Email</label>
+                            <input type="text" name="contacto" placeholder="+57 ......" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Cuentame tu proyecto</label>
+                            <textarea name="mensaje" placeholder="Que tipo de web necesitas, para que negocio....."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar mensaje</button>
+                    </form>
+                    <!--
+                    <div class="contact-form">
+                        <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                        <div class="form-group"><label>WhatsApp / Email</label><input type="text" placeholder="+57 .....">
+                        </div>
+                        <div class="form-group"><label>Cuentame tu proyecto</label><textarea
+                                placeholder="Que tipo de web necesitas, para que negocio...."></textarea></div>
+                        <button class="btn-submit">Enviar mensaje </button>
+                    </div>
+                -->
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/573161621202" class="wa-button" target="_blank">
+            <img src="Asset/whatsapp.png" alt="Escribeme por WhatsApp"
+            loading="lazy">
+        </a>
+
+        <!-- PROJECT MODAL -->
+        <div class="project-modal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="modal-body">
+                    <div class="modal-image">
+                        <img id="modalImg" src="" alt="Project Preview"
+                        loading="lazy">
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modalTitle">Project Title</h3>
+                        <div class="modal-tags" id="modalTags">
+                            <!-- tags go here -->
+                        </div>
+                        <p class="modal-desc" id="modalDesc">Project description goes here...</p>
+                        <a href="#" class="modal-btn" id="modalLink" target="_blank">Visitar sitio web</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!--        VISTA 2: SOPORTE TÉCNICO (clara)        -->
+    <main id="vista-soporte" class="vista">
+        <header id="inicio-soporte" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1 class="hero-title">BIENVENIDOS<br><span>SOPORTE Y
+                            <br>MANTENIMIENTO<br>TECNICO A <br>COMPUTADORAS</span></h1>
+                    <p class="hero-subtitle">Mantenimiento tecnico a equipos de computo</p>
+                    <a href="https://wa.me/573161621202" class="btn-primary hero-btn">Poner en contacto</a>
+                </div>
+                <div class="hero-image">
+                    <img src="Asset/img-hero2.jpg" alt="Soporte tecnico" 
+                    loading="lazy" class="hero-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- SECCION  SERVICIOS -->
+
+        <section id="servicios-sop" class="servicios-split">
+            <div class="split-container">
+                <!-- Mitad izquierda: lista de servicios -->
+                <div class="split-left">
+                    <div class="servicios-header">
+                        <span class="section-tag">// servicios</span>
+                        <h2 class="split-title">Lo que hacemos</h2>
+                    </div>
+                    <ul class="servicios-menu" id="serviciosMenu">
+                        <li class="servicio-opcion active" data-id="1">
+                            <span class="servicio-icon">🛠️</span>
+                            <span class="servicio-name">Mantenimiento preventivo</span>
+                        </li>
+                        <li class="servicio-opcion" data-id="2">
+                            <span class="servicio-icon">💻</span>
+                            <span class="servicio-name">Instalación y optimización</span>
+                        </li>
+                        <li class="servicio-opcion" data-id="3">
+                            <span class="servicio-icon">🛡️</span>
+                            <span class="servicio-name">Eliminación de virus</span>
+                        </li>
+                        <li class="servicio-opcion" data-id="4">
+                            <span class="servicio-icon">💾</span>
+                            <span class="servicio-name">Recuperación de datos</span>
+                        </li>
+                        <li class="servicio-opcion" data-id="5">
+                            <span class="servicio-icon">🔧</span>
+                            <span class="servicio-name">Redes y periféricos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mitad derecha: detalle del servicio -->
+                <div class="split-right" id="servicioDetalle">
+                    <div class="detalle-inner">
+                        <div class="detalle-icon">🛠️</div>
+                        <h3 class="detalle-titulo">Mantenimiento preventivo</h3>
+                        <p class="detalle-texto">
+                            Limpieza profunda de componentes, cambio de pasta térmica y verificación de
+                            ventiladores para mantener tu equipo fresco y estable.
+                        </p>
+                        <a href="#" class="detalle-link">Más información →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION PROYECTOS  -->
+        <section id="proyectos" class="proyectos-seccion">
+            <div class="proyectos-header">
+                <span class="section-tag">// Casos resueltos</span>
+                <h2 class="proyectos-titulo">Trabajos recientes</h2>
+                <p class="proyecto-subtitulo">Cada equipo es tratado como si fuera propio</p>
+            </div>
+
+            <div class="proyectos-grid">
+                <!--    Tarjeta 1   -->
+                <article class="proyecto-card">
+                    <div class="proyecto-img">
+                        <img src="Asset/tarjeta1.jpg" alt="Limpieza interna de laptop"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/600x400/f0f9ff/0ea5e9?text=Proyecto+1'">
+                        <div class="proyecto-overlay">
+                            <span class="proyecto-ver">Ver caso →</span>
+                        </div>
+                    </div>
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-nombre">Limpieza profunda + cambio de pasta</h3>
+                        <p class="proyecto-desc">Laptop Dell con sobrecalentamiento. Quedó en 45°C bajo carga.</p>
+                        <div class="proyecto-tags">
+                            <span>Mantenimiento</span>
+                            <span>Hardware</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!--    Tarjeta 2   -->
+                <article class="proyecto-card">
+                    <div class="proyecto-img">
+                        <img src="Asset/tarjeta2.jpg" alt="Recuperación de datos"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/600x400/f0f9ff/7c3aed?text=Proyecto+2'">
+                        <div class="proyecto-overlay">
+                            <span class="proyecto-ver">Ver caso →</span>
+                        </div>
+                    </div>
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-nombre">Rescate de datos de disco duro</h3>
+                        <p class="proyecto-desc">Recuperación del 98% de archivos de un disco con sectores dañados.</p>
+                        <div class="proyecto-tags">
+                            <span>Recuperación</span>
+                            <span>Datos</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!--    Tarjeta 3   -->
+                <article class="proyecto-card">
+                    <div class="proyecto-img">
+                        <img src="Asset/tarjeta3.jpg" alt="Instalación de red WiFi"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/600x400/f0f9ff/0ea5e9?text=Proyecto+3'">
+                        <div class="proyecto-overlay">
+                            <span class="proyecto-ver">Ver caso →</span>
+                        </div>
+                    </div>
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-nombre">Configuración de red doméstica</h3>
+                        <p class="proyecto-desc">Instalación de router, repetidor y configuración de impresora en red.
+                        </p>
+                        <div class="proyecto-tags">
+                            <span>Redes</span>
+                            <span>WiFi</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCION ACERCA DE   -->
+        <section id="acerca" class="about-digitalb">
+            <div class="about-wrapper">
+                <!-- Mitad izquierda: imagen -->
+                <div class="about-imagen">
+                    <img src="Asset/acerca2.avif" alt="Digital.Hec[It]"
+                        loading="lazy"
+                        onerror="this.src='https://via.placeholder.com/600x700/0f172a/0ea5e9?text=Digital.Hec%5BIt%5D'">
+                    <div class="about-imagen-marca">
+                        <span>DH</span>
+                    </div>
+                </div>
+
+                <!-- Mitad derecha: contenido -->
+                <div class="about-contenido">
+                    <span class="section-tag">// acerca de</span>
+                    <h2 class="about-titulo">Tecnología que <br>trabaja para ti</h2>
+                    <div class="about-linea"></div>
+                    <p class="about-descripcion">
+                        Detrás de cada servicio hay un técnico que entiende la importancia de tu equipo.
+                        Con más de 5 años de experiencia en mantenimiento de computadoras, impresoras y redes,
+                        ayudo a profesionales y pequeñas empresas a mantener su tecnología funcionando sin
+                        interrupciones.
+                    </p>
+                    <p class="about-descripcion">
+                        Mi enfoque combina diagnóstico preciso, reparación efectiva y comunicación clara.
+                        Porque un equipo bien mantenido es sinónimo de productividad.
+                    </p>
+
+                    <!-- Datos destacados -->
+                    <div class="about-valores">
+                        <div class="valor-item">
+                            <span class="valor-numero">+5</span>
+                            <span class="valor-etiqueta">Años activo</span>
+                        </div>
+                        <div class="valor-item">
+                            <span class="valor-numero">+50</span>
+                            <span class="valor-etiqueta">Clientes satisfechos</span>
+                        </div>
+                        <div class="valor-item">
+                            <span class="valor-numero">24h</span>
+                            <span class="valor-etiqueta">Respuesta</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/573161621202" class="about-btn">Conversemos →</a>
+                </div>
+            </div>
+        </section>
+
+        <!--    SECCION CONTACTO    -->
+        <section id="contacto-sop" class="contacto-seccion">
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <span class="section-tag">// contacto</span>
+                    <h2 class="contacto-titulo">Conversemos</h2>
+                    <p class="contacto-descripcion">
+                        Cuéntame qué problema tienes con tu computadora o red. Te respondo en menos de 24h.
+                    </p>
+                    <div class="contacto-detalles">
+                        <div class="contacto-item">
+                            <span class="contacto-icon">📱</span>
+                            <div>
+                                <strong>+57 316 162 1202</strong>
+                                <span>WhatsApp / Llamada</span>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="contacto-icon">📍</span>
+                            <div>
+                                <strong>Colombia</strong>
+                                <span>Proyectos remotos a todo el país</span>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="contacto-icon">⏱️</span>
+                            <div>
+                                <strong>Respuesta en 24h</strong>
+                                <span>Lunes a sábado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-formulario">
+                    <form class="form-contacto" action="https://formspree.io/f/mwvradzw" method="POST">
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="contacto">WhatsApp / Email</label>
+                            <input type="text" id="contacto-input" name="contacto" placeholder="+57 300 123 4567"
+                                required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="mensaje">Describe tu problema</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                placeholder="Cuéntame qué problema tienes con tu computadora o red. Te respondo en menos de 24h."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="form-boton">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--        FOOTER COMÚN        -->
+    <footer id="footer-principal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="brand-bridge">
+                            <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 90 H380 M60 90 V40 M340 90 V40 M60 45 C120 75 280 75 340 45" stroke="white"
+                                    stroke-width="2" stroke-dasharray="4 4" opacity="0.5" />
+                                <rect x="55" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                                <rect x="335" y="40" width="10" height="10" fill="white" opacity="0.8" />
+                            </svg>
+                        </div>
+                        <div class="brand-icon">DH</div>
+                        <div class="brand-text">
+                            <div class="brand-digital">DIGITAL</div>
+                            <div class="brand-hecit">H E C <span>[ I T ]</span></div>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Diseño web & soporte técnico que convierten visitantes en clientes.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Navegación</h4>
+                    <!-- Enlaces visibles en Desarrollo Web -->
+                    <ul id="footer-nav-web" class="footer-nav-lista">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#metodo">Metodología</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#portafolio">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                    <!-- Enlaces visibles en Soporte Técnico -->
+                    <ul id="footer-nav-soporte" class="footer-nav-lista" style="display: none;">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#servicios-sop">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#acerca">Acerca de</a></li>
+                        <li><a href="#contacto-sop">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-group">
+                    <h4>Contacto</h4>
+                    <p><span>📱</span> +57 316 162 1202</p>
+                    <p><span>📍</span> Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Digital.Hec[It] — Todos los derechos reservados</div>
+                <div class="footer-note">AGENCIA BOUTIQUE — Dark Tech</div>
+            </div>
+        </div>
+    </footer>
+
+    <!--        BOTÓN WHATSAPP FIJO         -->
+    <a href="https://wa.me/573161621202" class="wa-button" target="_blank" aria-label="Contactar por WhatsApp">
+        <img src="Asset/whatsapp.png" alt="WhatsApp" loading="lazy" onerror="this.style.display='none'">
+    </a>
+
+    <!--        MODAL COMÚN (si se usa en ambas vistas)         -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image"><img id="modalImg" src="" alt="Preview" loading="lazy"></div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <div class="modal-tags" id="modalTags"></div>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <a href="#" class="modal-btn" id="modalLink" target="_blank">Visitar sitio web</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" title="Volver arriba"  
+    style="position: fixed; bottom: 100px; right: 28px; z-index: 200;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--accent); color: #0f172a; border: none;
+            font-size: 1.4rem; cursor: pointer; opacity: 0;
+            transition: opacity 0.3s; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(14,165,233,0.3);">↑</button>
+
+    <!--        SCRIPTS         -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
