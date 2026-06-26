@@ -32,6 +32,10 @@ const linkSoporte = document.getElementById('link-soporte');
 const footerNavWeb = document.getElementById('footer-nav-web');
 const footerNavSoporte = document.getElementById('footer-nav-soporte');
 
+// Título y meta descripción dinámicos para SEO
+const titulo = document.querySelector('title');
+const metaDesc = document.querySelector('meta[name="description"]');
+
 function cambiarVista(tipo) {
     if (tipo === 'web') {
         vistaWeb.classList.add('activa');
@@ -44,6 +48,9 @@ function cambiarVista(tipo) {
         if (linkSoporte) linkSoporte.style.display = 'flex';
         if (footerNavWeb) footerNavWeb.style.display = 'block';
         if (footerNavSoporte) footerNavSoporte.style.display = 'none';
+
+        if (titulo) titulo.textContent = 'Digital.Hec[It] | Desarrollo Web Profesional';
+        if (metaDesc) metaDesc.setAttribute('content', 'Diseño y desarrollo de páginas web, tiendas online y mantenimiento web. Soluciones digitales a medida para negocios en toda Colombia.');
 
         // Volver al inicio
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -62,50 +69,15 @@ function cambiarVista(tipo) {
         if (footerNavWeb) footerNavWeb.style.display = 'none';
         if (footerNavSoporte) footerNavSoporte.style.display = 'block';
 
+        if (titulo) titulo.textContent = 'Digital.Hec[It] | Soporte Técnico de Computadoras en Cali';
+        if (metaDesc) metaDesc.setAttribute('content', 'Mantenimiento preventivo, reparación y soporte técnico de computadores y redes en Cali. Servicio rápido, profesional y a domicilio.');
+
         // Volver al inicio
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('inicio-soporte')?.focus({ preventScroll: true });
     }
+
 }
-/*
-function cambiarVista(tipo) {
-    if (tipo === 'web') {
-        // Mostrar vista web, ocultar vista soporte
-        vistaWeb.classList.add('activa');
-        vistaSoporte.classList.remove('activa');
-        body.classList.remove('tema-claro');
-
-        // Intercambiar grupos de enlaces del nav
-        if (grupoWeb) grupoWeb.style.display = 'flex';
-        if (grupoSoporte) grupoSoporte.style.display = 'none';
-
-        // Mostrar solo el enlace hacia Soporte, ocultar el de Desarrollo Web
-        if (linkWeb) linkWeb.style.display = 'none';
-        if (linkSoporte) linkSoporte.style.display = 'flex';
-
-        // Intercambiar enlaces del footer
-        if (footerNavWeb) footerNavWeb.style.display = 'block';
-        if (footerNavSoporte) footerNavSoporte.style.display = 'none';
-
-    } else if (tipo === 'soporte') {
-        // Mostrar vista soporte, ocultar vista web
-        vistaSoporte.classList.add('activa');
-        vistaWeb.classList.remove('activa');
-        body.classList.add('tema-claro');
-
-        // Intercambiar grupos de enlaces del nav
-        if (grupoWeb) grupoWeb.style.display = 'none';
-        if (grupoSoporte) grupoSoporte.style.display = 'flex';
-
-        // Mostrar solo el enlace hacia Desarrollo Web, ocultar el de Soporte
-        if (linkWeb) linkWeb.style.display = 'flex';
-        if (linkSoporte) linkSoporte.style.display = 'none';
-
-        // Intercambiar enlaces del footer
-        if (footerNavWeb) footerNavWeb.style.display = 'none';
-        if (footerNavSoporte) footerNavSoporte.style.display = 'block';
-    }
-}*/
 
 // Listeners para los enlaces del menú principal
 if (linkWeb) linkWeb.addEventListener('click', (e) => { e.preventDefault(); cambiarVista('web'); });
