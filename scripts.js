@@ -1,7 +1,32 @@
 /* =========================================
-   LOADER
+   LOADER (Optimizado - Branding + Velocidad)
    ========================================= */
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        // Tiempo mínimo para que el logo sea visible (0.8s - ajustable)
+        const tiempoMinimo = 800; // milisegundos
+        const inicio = performance.now();
+
+        function ocultarLoader() {
+            const transcurrido = performance.now() - inicio;
+            const retraso = Math.max(0, tiempoMinimo - transcurrido);
+
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.addEventListener('transitionend', () => {
+                    loader.style.display = 'none';
+                }, { once: true });
+            }, retraso);
+        }
+
+        ocultarLoader();
+    }
+});
+/* =========================================
+   LOADER sin optimizar
+   ========================================= */
+/*window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) {
         setTimeout(() => {
@@ -11,7 +36,7 @@ window.addEventListener('load', () => {
             }, 500);
         }, 1000);
     }
-});
+});*/
 
 /* =========================================
    CAMBIO DE VISTA (TEMA + ENLACES DEL NAV Y FOOTER)
@@ -36,6 +61,12 @@ const footerNavSoporte = document.getElementById('footer-nav-soporte');
 const titulo = document.querySelector('title');
 const metaDesc = document.querySelector('meta[name="description"]');
 
+// Botón de cambio de vista en el nav
+const btnCambiarVista = document.getElementById('btn-cambiar-vista');
+
+// Función para cambiar mensaje entre vistas
+const waButton = document.querySelector('.wa-button');
+
 function cambiarVista(tipo) {
     if (tipo === 'web') {
         vistaWeb.classList.add('activa');
@@ -44,8 +75,16 @@ function cambiarVista(tipo) {
 
         if (grupoWeb) grupoWeb.style.display = 'flex';
         if (grupoSoporte) grupoSoporte.style.display = 'none';
-        if (linkWeb) linkWeb.style.display = 'none';
-        if (linkSoporte) linkSoporte.style.display = 'flex';
+
+        // En escritorio, solo mostramos el enlace hacia la otra vista (controlado por CSS)
+        if (linkWeb) {
+            linkWeb.classList.remove('visible-desktop');
+            linkWeb.classList.add('oculto-desktop');
+        }
+        if (linkSoporte) {
+            linkSoporte.classList.remove('visible-desktop');
+            linkSoporte.classList.add('oculto-desktop');
+        }
         if (footerNavWeb) footerNavWeb.style.display = 'block';
         if (footerNavSoporte) footerNavSoporte.style.display = 'none';
 
@@ -64,8 +103,14 @@ function cambiarVista(tipo) {
 
         if (grupoWeb) grupoWeb.style.display = 'none';
         if (grupoSoporte) grupoSoporte.style.display = 'flex';
-        if (linkWeb) linkWeb.style.display = 'flex';
-        if (linkSoporte) linkSoporte.style.display = 'none';
+        if (linkWeb) {
+            linkWeb.classList.remove('oculto-desktop');
+            linkWeb.classList.add('visible-desktop');
+        }
+        if (linkSoporte) {
+            linkSoporte.classList.remove('oculto-desktop');
+            linkSoporte.classList.add('visible-desktop');
+        }
         if (footerNavWeb) footerNavWeb.style.display = 'none';
         if (footerNavSoporte) footerNavSoporte.style.display = 'block';
 
@@ -77,6 +122,34 @@ function cambiarVista(tipo) {
         document.getElementById('inicio-soporte')?.focus({ preventScroll: true });
     }
 
+    // Actualizar botón cambiador de vista en el nav
+
+    if (btnCambiarVista) {
+        if (tipo === 'web') {
+            btnCambiarVista.textContent = 'Soporte Técnico';
+            btnCambiarVista.href = '#';
+            btnCambiarVista.onclick = (e) => {
+                e.preventDefault();
+                cambiarVista('soporte');
+            };
+        } else {
+            btnCambiarVista.textContent = 'Desarrollo Web';
+            btnCambiarVista.href = '#';
+            btnCambiarVista.onclick = (e) => {
+                e.preventDefault();
+                cambiarVista('web');
+            };
+        }
+    }
+
+    // Actualizar mensaje del boton flotante de whatsapp según la vista
+    if (waButton) {
+        if (tipo === 'web') {
+            waButton.href = 'https://wa.me/573161621202?text=' + encodeURIComponent('¡Hola, Digital.Hec[It]! Vi su página web y me gustaría recibir información sobre desarrollo web. ¿Podrían ayudarme?');
+        } else {
+            waButton.href = 'https://wa.me/573161621202?text=' + encodeURIComponent('¡Hola, Digital.Hec[It]! Vi su página web y necesito soporte técnico para mi computadora. ¿Podrían ayudarme?');
+        }
+    }
 }
 
 // Listeners para los enlaces del menú principal
@@ -93,6 +166,9 @@ if (mobileMenu && navLinks) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('is-active');
+
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+
     });
 
     // Cerrar al hacer clic en un enlace
@@ -101,6 +177,9 @@ if (mobileMenu && navLinks) {
         enlace.addEventListener('click', () => {
             navLinks.classList.remove('active');
             mobileMenu.classList.remove('is-active');
+
+            document.body.style.overflow = '';
+
         });
     });
 
@@ -111,6 +190,9 @@ if (mobileMenu && navLinks) {
         if (!isClickInside && !isClickOnToggle && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             mobileMenu.classList.remove('is-active');
+
+            document.body.style.overflow = '';
+
         }
     });
 }
@@ -215,7 +297,52 @@ function initModal() {
 /* =========================================
    SERVICIOS INTERACTIVOS (Vista Soporte)
    ========================================= */
+
 function initServiciosSoporte() {
+    const opciones = document.querySelectorAll('#vista-soporte .servicio-opcion');
+    const detalleIcon = document.querySelector('#vista-soporte .detalle-icon');
+    const detalleTitulo = document.querySelector('#vista-soporte .detalle-titulo');
+    const detalleTexto = document.querySelector('#vista-soporte .detalle-texto');
+    const detalleLink = document.querySelector('#vista-soporte .detalle-link');
+    if (!opciones.length) return;
+
+    const serviciosData = {
+        1: { icon: '🛠️', title: 'Mantenimiento preventivo', text: 'Limpieza profunda de componentes internos y externos, cambio de pasta térmica y verificación de ventiladores para prevenir sobrecalentamiento y fallos prematuros.', link: '#' },
+        2: { icon: '💻', title: 'Instalación y optimización', text: 'Instalamos sistemas operativos, controladores, programas esenciales y optimizamos la configuración del sistema para un rendimiento más rápido y estable.', link: '#' },
+        3: { icon: '🛡️', title: 'Eliminación de virus', text: 'Escanemos y eliminamos cualquier tipo de virus, spyware, ransomware o adware. Restauramos la seguridad de tu equipo con herramientas avanzadas.', link: '#' },
+        4: { icon: '💾', title: 'Recuperación de datos', text: 'Recuperamos archivos borrados o perdidos por formateo, fallo de disco o virus. Trabajamos con discos duros, SSD y memorias USB.', link: '#' },
+        5: { icon: '🔧', title: 'Redes y periféricos', text: 'Configuramos redes WiFi, cableado de red, impresoras, escáneres y otros dispositivos para que todo funcione conectado y sin conflictos.', link: '#' }
+    };
+
+    opciones.forEach(opcion => {
+        opcion.addEventListener('click', () => {
+            const id = opcion.getAttribute('data-id');
+            const data = serviciosData[id];
+            if (!data) return;
+
+            // En móvil (<=900px): acordeón — toggle de la clase active
+            if (window.innerWidth <= 900) {
+                opciones.forEach(o => {
+                    if (o !== opcion) o.classList.remove('active');
+                });
+                opcion.classList.toggle('active');
+            }
+            // En escritorio: comportamiento original (columna derecha)
+            else {
+                opciones.forEach(o => o.classList.remove('active'));
+                opcion.classList.add('active');
+                if (detalleIcon && detalleTitulo && detalleTexto) {
+                    detalleIcon.textContent = data.icon;
+                    detalleTitulo.textContent = data.title;
+                    detalleTexto.textContent = data.text;
+                    if (detalleLink) detalleLink.href = data.link;
+                }
+            }
+        });
+    });
+}
+
+/*function initServiciosSoporte() {
     const opciones = document.querySelectorAll('#vista-soporte .servicio-opcion');
     const detalleIcon = document.querySelector('#vista-soporte .detalle-icon');
     const detalleTitulo = document.querySelector('#vista-soporte .detalle-titulo');
@@ -245,7 +372,7 @@ function initServiciosSoporte() {
             }
         });
     });
-}
+}*/
 
 /* =========================================
    SCROLL REVEAL (común)
@@ -267,28 +394,94 @@ function initScrollReveal() {
 /* =========================================
    CURSOR PERSONALIZADO
    ========================================= */
+
 function initCustomCursor() {
     const dot = document.querySelector('.cursor-dot');
     const outline = document.querySelector('.cursor-outline');
     if (!dot || !outline) return;
 
+    let mouseX = 0, mouseY = 0;
+    let rafId = null;
+
     window.addEventListener('mousemove', (e) => {
-        dot.style.left = `${e.clientX}px`;
-        dot.style.top = `${e.clientY}px`;
-        outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        if (document.body.classList.contains('tema-claro')) return;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!rafId) {
+            rafId = requestAnimationFrame(updateCursor);
+        }
     });
+
+    function updateCursor() {
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+        outline.style.left = mouseX + 'px';
+        outline.style.top = mouseY + 'px';
+        rafId = null;
+    }
 
     const clickables = document.querySelectorAll('a, button, .service-card, .portfolio-item, .method-card, .menu-toggle');
     clickables.forEach(el => {
-        el.addEventListener('mouseenter', () => { outline.classList.add('hover'); dot.classList.add('hover'); });
-        el.addEventListener('mouseleave', () => { outline.classList.remove('hover'); dot.classList.remove('hover'); });
+        el.addEventListener('mouseenter', () => {
+            outline.classList.add('hover');
+            dot.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            outline.classList.remove('hover');
+            dot.classList.remove('hover');
+        });
     });
 }
 
+/* vieja 
+function initCustomCursor() {
+ const dot = document.querySelector('.cursor-dot');
+ const outline = document.querySelector('.cursor-outline');
+ if (!dot || !outline) return;
+
+ window.addEventListener('mousemove', (e) => {
+     dot.style.left = `${e.clientX}px`;
+     dot.style.top = `${e.clientY}px`;
+     outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+ });
+
+ const clickables = document.querySelectorAll('a, button, .service-card, .portfolio-item, .method-card, .menu-toggle');
+ clickables.forEach(el => {
+     el.addEventListener('mouseenter', () => { outline.classList.add('hover'); dot.classList.add('hover'); });
+     el.addEventListener('mouseleave', () => { outline.classList.remove('hover'); dot.classList.remove('hover'); });
+ });
+}
+*/
 /* =========================================
 // Interceptar envío de formularios de Formspree
         ========================================= */
+
 function initFormularios() {
+    const formularios = document.querySelectorAll('form[action*="formspree.io"]');
+    formularios.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                // Detectar qué vista está activa para personalizar la página de gracias
+                const vistaActiva = document.querySelector('.vista.activa');
+                let origen = 'web';
+                if (vistaActiva && vistaActiva.id === 'vista-soporte') {
+                    origen = 'soporte';
+                }
+                window.location.href = 'gracias.html?origen=' + origen;
+            } else {
+                alert('⚠️ Hubo un error. Intenta de nuevo más tarde.');
+            }
+        });
+    });
+}
+/*function initFormularios() {
     const formularios = document.querySelectorAll('form[action*="formspree.io"]');
     formularios.forEach(form => {
         form.addEventListener('submit', async (e) => {
@@ -322,7 +515,7 @@ function initFormularios() {
             }
         });
     });
-}
+}*/
 
 // =============================================
 // Inicializar todo al cargar Y aplicar vista inicial
@@ -339,9 +532,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const backBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-        backBtn.style.opacity = window.scrollY > 600 ? '1' : '0';
+        if (window.scrollY > 600) {
+            backBtn.classList.add('visible');
+        } else {
+            backBtn.classList.remove('visible');
+        }
     });
     backBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+    /*
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        backBtn.style.opacity = window.scrollY > 600 ? '1' : '0';
+    });
+    backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });*/
 });

@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Digital.Hec[It] | Diseño Web Premium">
     <meta property="og:description" content="Transformamos tu negocio con estrategias digitales de alto impacto.">
-    <meta property="og:image" content="https://hecit.digital/Asset/projects/restaurante.png">
+    <meta property="og:image" content="https://digitalhecit.com/Asset/projects/restaurante.webp">
 
     <!-- Fuentes -->
     <link
@@ -118,8 +118,7 @@
             <a href="#" id="link-soporte">Soporte Técnico</a>
         </div>
 
-        <a href="https://wa.me/573161621202?text=%C2%A1Hola%2C%20Digital.Hec%5BIt%5D%21%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
-            class="btn-cotizar btn-nav">Cotizar</a>
+        <a href="#" id="btn-cambiar-vista" class="btn-cotizar btn-nav">Soporte Técnico</a>
     </nav>
 
     <!--        VISTA 1: DESARROLLO WEB (oscura)        -->
@@ -143,8 +142,7 @@
             <p class="hero-sub">Desarrollo de sitios web y tiendas online que convierten visitantes en clientes.
                 Presencia digital profesional para tu negocio.</p>
             <div class="hero-ctas">
-                <a href="https://wa.me/573161621202?text=%C2%A1Hola%2C%20Digital.Hec%5BIt%5D%21%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
-                    class="btn-primary">Cotizar proyecto</a>
+                <a href="#contacto" class="btn-primary">Cotizar proyecto</a>
                 <a href="#portafolio" class="btn-ghost">Ver portafolio</a>
             </div>
             <div class="stats">
@@ -525,18 +523,18 @@
 
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                            <input type="text" id="name" name="nombre" placeholder="Tu nombre" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">WhatsApp / Email</label>
-                            <input type="text" name="contacto" placeholder="+57 ......" required>
+                            <input type="text" id="email" name="contacto" placeholder="+57 ......" required>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Cuentame tu proyecto</label>
-                            <textarea name="mensaje" placeholder="Que tipo de web necesitas, para que negocio....."
-                                required></textarea>
+                            <textarea id="message" name="mensaje"
+                                placeholder="Que tipo de web necesitas, para que negocio....." required></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">Enviar mensaje</button>
@@ -555,36 +553,6 @@
             </div>
         </section>
 
-        <a href="https://wa.me/573161621202?text=%C2%A1Hola%2C%20Digital.Hec%5BIt%5D%21%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
-            class="wa-button" target="_blank">
-            <img src="Asset/whatsapp.webp" alt="Escribeme por WhatsApp" loading="lazy">
-        </a>
-
-        <!-- PROJECT MODAL -->
-        <div class="project-modal">
-            <div class="modal-content">
-                <button class="modal-close" id="closeModal">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-                <div class="modal-body">
-                    <div class="modal-image">
-                        <img id="modalImg" src="" alt="Project Preview" loading="lazy">
-                    </div>
-                    <div class="modal-info">
-                        <h3 id="modalTitle">Project Title</h3>
-                        <div class="modal-tags" id="modalTags">
-                            <!-- tags go here -->
-                        </div>
-                        <p class="modal-desc" id="modalDesc">Project description goes here...</p>
-                        <a href="#" class="modal-btn" id="modalLink" target="_blank">Visitar sitio web</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <!--        VISTA 2: SOPORTE TÉCNICO (clara)        -->
@@ -600,7 +568,7 @@
                         class="btn-primary hero-btn">Poner en contacto</a>
                 </div>
                 <div class="hero-image">
-                    <img src="Asset/img-hero2.webp" alt="Soporte tecnico" loading="lazy" class="hero-img">
+                    <img src="Asset/img-hero2.webp" alt="Soporte tecnico" class="hero-img">
                 </div>
             </div>
         </header>
@@ -619,22 +587,63 @@
                         <li class="servicio-opcion active" data-id="1">
                             <span class="servicio-icon">🛠️</span>
                             <span class="servicio-name">Mantenimiento preventivo</span>
+                            <div class="servicio-detalle-movil">
+                                <div class="detalle-header-movil">
+                                    <span class="servicio-icon-movil">🛠️</span>
+                                    <strong>Mantenimiento preventivo</strong>
+                                </div>
+                                <p>Limpieza profunda de componentes internos y externos, cambio de pasta térmica y
+                                    verificación de ventiladores para prevenir sobrecalentamiento y fallos prematuros.
+                                </p>
+                            </div>
                         </li>
                         <li class="servicio-opcion" data-id="2">
                             <span class="servicio-icon">💻</span>
                             <span class="servicio-name">Instalación y optimización</span>
+                            <div class="servicio-detalle-movil">
+                                <div class="detalle-header-movil">
+                                    <span class="servicio-icon-movil">💻</span>
+                                    <strong>Instalación y optimización</strong>
+                                </div>
+                                <p>Instalamos sistemas operativos, controladores, programas esenciales y optimizamos la
+                                    configuración del sistema para un rendimiento más rápido y estable.</p>
+                            </div>
                         </li>
                         <li class="servicio-opcion" data-id="3">
                             <span class="servicio-icon">🛡️</span>
                             <span class="servicio-name">Eliminación de virus</span>
+                            <div class="servicio-detalle-movil">
+                                <div class="detalle-header-movil">
+                                    <span class="servicio-icon-movil">🛡️</span>
+                                    <strong>Eliminación de virus</strong>
+                                </div>
+                                <p>Escanemos y eliminamos cualquier tipo de virus, spyware, ransomware o adware.
+                                    Restauramos la seguridad de tu equipo con herramientas avanzadas.</p>
+                            </div>
                         </li>
                         <li class="servicio-opcion" data-id="4">
                             <span class="servicio-icon">💾</span>
                             <span class="servicio-name">Recuperación de datos</span>
+                            <div class="servicio-detalle-movil">
+                                <div class="detalle-header-movil">
+                                    <span class="servicio-icon-movil">💾</span>
+                                    <strong>Recuperación de datos</strong>
+                                </div>
+                                <p>Recuperamos archivos borrados o perdidos por formateo, fallo de disco o virus.
+                                    Trabajamos con discos duros, SSD y memorias USB.</p>
+                            </div>
                         </li>
                         <li class="servicio-opcion" data-id="5">
                             <span class="servicio-icon">🔧</span>
                             <span class="servicio-name">Redes y periféricos</span>
+                            <div class="servicio-detalle-movil">
+                                <div class="detalle-header-movil">
+                                    <span class="servicio-icon-movil">🔧</span>
+                                    <strong>Redes y periféricos</strong>
+                                </div>
+                                <p>Configuramos redes WiFi, cableado de red, impresoras, escáneres y otros dispositivos
+                                    para que todo funcione conectado y sin conflictos.</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -881,40 +890,53 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-copy">© 2026 Digital.Hec[It] — Todos los derechos reservados</div>
-                <div class="footer-note">AGENCIA BOUTIQUE — Dark Tech</div>
+                <div class="footer-copy">
+                    © 2026 Digital.Hec[It] — Todos los derechos reservados
+                    <span class="footer-separador">|</span>
+                    <a href="/privacidad" class="footer-privacidad">Aviso de Privacidad</a>
+                </div>
+
             </div>
         </div>
     </footer>
 
     <!--        BOTÓN WHATSAPP FIJO         -->
     <a href="https://wa.me/573161621202?text=%C2%A1Hola%2C%20Digital.Hec%5BIt%5D%21%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
-        class="wa-button" target="_blank" aria-label="Contactar por WhatsApp">
-        <img src="Asset/whatsapp.webp" alt="WhatsApp" loading="lazy" onerror="this.style.display='none'">
+        class="wa-button" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="Asset/whatsapp.webp" alt="WhatsApp" onerror="this.style.display='none'">
     </a>
 
     <!--        MODAL COMÚN (si se usa en ambas vistas)         -->
     <div class="project-modal" id="projectModal">
         <div class="modal-content">
-            <button class="modal-close" id="closeModal">&times;</button>
+            <button class="modal-close" id="closeModal">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
             <div class="modal-body">
-                <div class="modal-image"><img id="modalImg" src="" alt="Preview" loading="lazy"></div>
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Project Preview" loading="lazy">
+                </div>
                 <div class="modal-info">
                     <h3 id="modalTitle"></h3>
                     <div class="modal-tags" id="modalTags"></div>
                     <p class="modal-desc" id="modalDesc"></p>
-                    <a href="#" class="modal-btn" id="modalLink" target="_blank">Visitar sitio web</a>
+                    <a href="#" class="modal-btn" id="modalLink" target="_blank" rel="noopener noreferrer">Visitar sitio
+                        web</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <button id="back-to-top" title="Volver arriba" style="position: fixed; bottom: 100px; right: 28px; z-index: 200;
-            width: 44px; height: 44px; border-radius: 50%;
-            background: var(--accent); color: #0f172a; border: none;
-            font-size: 1.4rem; cursor: pointer; opacity: 0;
-            transition: opacity 0.3s; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 12px rgba(14,165,233,0.3);">↑</button>
+    <button id="back-to-top" title="Volver arriba" aria-label="Volver al inicio">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <!--        SCRIPTS         -->
     <script src="scripts.js"></script>
